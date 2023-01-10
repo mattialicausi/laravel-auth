@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'projects' => [
+    'myprojects' => [
 
             [
                 'title' => 'Courses',
