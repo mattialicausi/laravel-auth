@@ -66,6 +66,16 @@ body {
         border: 1px solid $light-green;
         transition: 200ms linear;
     }
+
+    a {
+        color: $dark;
+        text-decoration: none;
+
+        &:hover {
+            color: $light-green;
+            transition: 200ms linear;
+        }
+    }
 }
 
 .my-lineheight {
@@ -76,4 +86,15 @@ body {
 
 .container-img-logo {
     width: 5rem;
+}
+
+// index admin
+
+.my-card {
+    background-color: $white;
+    color: $dark;
+
+    a {
+        text-decoration: none;
+    }
 }

@@ -2,11 +2,23 @@
 
 @section('content')
 
-    <ul>
-        @foreach ($projects as $project)
-            <li><a class="btn btn-primary text-white btn-sm" href="{{route('admin.projects.show', $project->slug)}}" title="View Project">{{$project->title}}</a></li>
+    <div class="container my-5">
+        <div class="row g-2">
+            @foreach ($projects as $project)
 
-        @endforeach
-    </ul>
+                <div class="card my-card col-3">
+                    <img class="card-img-top" src="{{$project->thumb1}}" alt="project image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$project->title}}</h5>
+                        <p class="card-text ">{{$project->description}}</p>
+                        <div class="my-btn rounded-pill">
+                            <a href="{{route('admin.projects.show', $project->slug)}}" title="show">show</a>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
+        </div>
+    </div>
 
 @endsection
