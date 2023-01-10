@@ -17,7 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title', 150);
             $table->string('slug');
-            $table->text('content');
+            $table->text('description');
+            $table->text('thumb1');
+            $table->text('thumb2')->nullable();
+            $table->string('technology_used');
+            $table->text('url');
             $table->timestamps();
         });
     }
