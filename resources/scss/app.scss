@@ -18,6 +18,19 @@ body {
     background-color: $white;
 }
 
+.navbar-nav {
+    li {
+
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            color: $light-green !important;
+            border-bottom: 2px solid $light-green;
+            transition: 300ms linear;
+    }
+    }
+}
+
 #index-guest {
     height: calc(100vh - 10vh);
 
