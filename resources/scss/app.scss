@@ -1,1 +1,66 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+//import variables
+@import'./variables/variables.scss';
+
+//general
+body {
+    background-color: $dark;
+    font-family: $open-sans;
+}
+
+#app {
+    height: 100vh;
+}
+
+.navbar {
+    height: 10vh;
+    background-color: $white;
+}
+
+#index-guest {
+    height: calc(100vh - 10vh);
+
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}
+
+.text-my-white {
+    color: $white;
+}
+
+.text-my-green {
+    color: $light-green;
+}
+
+.my-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.my-btn {
+    width: max-content;
+    padding: 10px;
+    border: 1px solid transparent;
+    background-color: $light-green;
+
+    &:hover {
+        background-color: $dark;
+        color: $light-green;
+        border: 1px solid $light-green;
+        transition: 200ms linear;
+    }
+}
+
+.my-lineheight {
+    line-height: 3rem;
+}
+
+//header
+
+.container-img-logo {
+    width: 5rem;
+}
