@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
+<div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-md-8" id="my-login-page">
             <div>
@@ -69,5 +69,9 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container-emogi-login">
+    <img src="{{Vite::asset('resources/img/memoji-saluto.webp')}}" alt="emoji img">
 </div>
 @endsection

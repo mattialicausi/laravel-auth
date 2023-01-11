@@ -2,8 +2,8 @@
 @section('content')
 
 <div id="index-guest" class="container">
-    <div class="row h-100 d-flex align-items-center">
-        <div class="col-6 my-flex h-10">
+    <div class="row h-100 d-flex align-items-center h-100">
+        <div class="col-6 my-flex h-100">
             <div class="text-uppercase text-my-white my-lineheight">hi there <span>👋</span> i'm</div>
             <h1 class="text-my-white my-lineheight">Mattia <br> Li Causi</h1>
             <h4 class="text-my-green my-lineheight">Full stack junior developer <span>😎</span></h4>
