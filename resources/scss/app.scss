@@ -98,6 +98,18 @@ body {
     // background-color: $white;
     // color: $dark;
 
+    .my-title-link {
+        color: $white;
+        font-weight: bold;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            color: $light-green;
+            border-bottom: 1px solid $light-green;
+            transition: 300ms linear;
+        }
+    }
+
     a {
         text-decoration: none;
     }
@@ -114,5 +126,16 @@ body {
             color: light-green;
             transition: 300ms linear;
         }
+    }
+}
+
+//create admin
+#create-admin {
+    input, textarea {
+        background-color: $dark;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid $light-green;
+        color: $white
     }
 }

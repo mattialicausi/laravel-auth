@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
+use App\Http\Requests\StoreProjectRequest;
+use Illuminate\Support\Facades\Storage;
+
 class ProjectController extends Controller
 {
     /**
@@ -36,9 +39,24 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        $data = $request->validated();
+        $slug = Project::generateSlug($request->title);
+
+        $data['slug'] = $slug;
+
+        if ($request->hasFile('thumb1') || $request->hasFile('thumb2')) {
+
+            $path1 = Storage::disk('public')->put('project_images', $request->thumb1);
+            $path2 = Storage::disk('public')->put('project_images', $request->thumb2);
+
+            $data['thumb1'] = $path1;
+            $data['thumb2'] = $path2;
+        }
+
+        $new_project = Project::create($data);
+        return redirect()->route('admin.projects.show', $new_project->slug);
     }
 
     /**

@@ -48,7 +48,7 @@
                 @foreach($projects as $project)
                     <tr>
                         <th scope="row">{{$project->id}}</th>
-                        <td><a class="text-my-white fw-bold" href="{{route('admin.projects.show', $project->slug)}}" title="View Projects">{{$project->title}}</a></td>
+                        <td><a class="my-title-link" href="{{route('admin.projects.show', $project->slug)}}" title="View Projects">{{$project->title}}</a></td>
                         <td class="text-my-white">{{Str::limit($project->description,100)}}</td>
                         <td><a class="link-secondary" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-pen"></i></a></td>
                         <td>
