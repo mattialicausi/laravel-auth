@@ -44,6 +44,10 @@ body {
     color: $white;
 }
 
+.text-my-dark {
+    color: $dark;
+}
+
 .text-my-green {
     color: $light-green;
 }
@@ -90,11 +94,25 @@ body {
 
 // index admin
 
-.my-card {
-    background-color: $white;
-    color: $dark;
+#index-admin{
+    // background-color: $white;
+    // color: $dark;
 
     a {
         text-decoration: none;
+    }
+
+    th {
+        color: $light-green;
+
+    }
+
+    i {
+        color: $white;
+
+        &:hover {
+            color: light-green;
+            transition: 300ms linear;
+        }
     }
 }
