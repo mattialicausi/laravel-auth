@@ -95,8 +95,6 @@ body {
 // index admin
 
 #index-admin{
-    // background-color: $white;
-    // color: $dark;
 
     .my-title-link {
         color: $white;
@@ -137,5 +135,31 @@ body {
         border: none;
         border-bottom: 1px solid $light-green;
         color: $white
+    }
+}
+
+// login page
+
+#my-login-page {
+    background-color: $dark;
+    color: $white;
+
+    .card-header {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    label {
+        color: $light-green;
+    }
+
+    input.form-control {
+        border: none;
+        border-radius: 0;
+        background-color: $dark;
+        color: $white;
+        border-bottom: 1px solid $light-green;
     }
 }
