@@ -7,7 +7,7 @@
             <div class="text-uppercase text-my-white my-lineheight">hi there <span>👋</span> i'm</div>
             <h1 class="text-my-white my-lineheight">Mattia <br> Li Causi</h1>
             <h4 class="text-my-green my-lineheight">Full stack junior developer <span>😎</span></h4>
-            <p class="text-my-white my-lineheight">I'm a student of the Boolean academy and I love developing front-end.</p>
+            <p class="text-my-white my-lineheight">I'm a student of the Boolean Academy and I love developing front-end.</p>
             <button class="my-btn rounded-pill"><a href="">See my projects</a></button>
         </div>
 
