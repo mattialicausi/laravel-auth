@@ -110,7 +110,7 @@ class ProjectController extends Controller
         }
 
         $project->update($data);
-        return redirect()->route('admin.projects.index')->whit('message', "$project->title updated successfully");
+        return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully");
     }
 
     /**

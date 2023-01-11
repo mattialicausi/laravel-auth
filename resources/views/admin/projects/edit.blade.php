@@ -30,7 +30,7 @@
                       </div>
 
                       <div class="mb-3">
-                        <label for="content" class="form-label text-my-green fw-bold mb-2">Description</label>
+                        <label for="description" class="form-label text-my-green fw-bold mb-2">Description</label>
                         <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{old('description', $project->description)}}</textarea>
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
                       <div class="mb-3">
                         <label for="thumb1" class="form-label text-my-green fw-bold mb-2">First Image</label>
-                        <input type="text" class="form-control @error('thumb1') is-invalid @enderror" id="thumb1" name="thumb1" value="{{old('thumb1', $project->thumb1)}}">
+                        <input type="file" class="form-control @error('thumb1') is-invalid @enderror" id="thumb1" name="thumb1" value="{{old('thumb1', $project->thumb1)}}">
                         @error('thumb1')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -47,7 +47,7 @@
 
                       <div class="mb-3">
                         <label for="thumb2" class="form-label text-my-green fw-bold mb-2">Second Image</label>
-                        <input type="text" class="form-control @error('thumb2') is-invalid @enderror" id="thumb2" name="thumb2" value="{{old('thumb2', $project->thumb2)}}">
+                        <input type="file" class="form-control @error('thumb2') is-invalid @enderror" id="thumb2" name="thumb2" value="{{old('thumb2', $project->thumb2)}}">
                         @error('thumb2')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

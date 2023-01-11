@@ -25,9 +25,9 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|unique:projects|max:150|min:3',
-            'description' => 'nullable',
-            'thumb1' => 'required|image|max:250',
-            'thumb2' => 'required|image|max:250',
+            'description' => 'required',
+            'thumb1' => 'required|image',
+            'thumb2' => 'required|image',
             'technology_used' => 'required',
             'url' => 'required'
         ];
@@ -37,6 +37,7 @@ class StoreProjectRequest extends FormRequest
         return [
 
             'title.required' => 'The title is obligatory',
+            'description.required' => 'The description is obligatory',
             'title.min' => 'The title must be at least :min characters long.',
             'title.max' => 'Title cannot exceed :max characters.',
             'title.unique:projects' => 'The title already exists',

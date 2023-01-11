@@ -29,8 +29,11 @@
                       </div>
 
                       <div class="mb-3">
-                        <label for="content" class="form-label text-my-green fw-bold mb-2">Description</label>
-                        <textarea class="form-control" id="description" name="description"></textarea>
+                        <label for="description" class="form-label text-my-green fw-bold mb-2">Description</label>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"></textarea>
+                        @error('description')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
 
                       <div class="mb-3">
