@@ -30,7 +30,6 @@ class StoreProjectRequest extends FormRequest
             'thumb2' => 'required|image|max:250',
             'technology_used' => 'required',
             'url' => 'required'
-
         ];
     }
 

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Project;
 
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -48,8 +48,8 @@ class ProjectController extends Controller
 
         if ($request->hasFile('thumb1') || $request->hasFile('thumb2')) {
 
-            $path1 = Storage::disk('public')->put('project_images', $request->thumb1);
-            $path2 = Storage::disk('public')->put('project_images', $request->thumb2);
+            $path1 = Storage::disk('public')->put('project_images1', $request->thumb1);
+            $path2 = Storage::disk('public')->put('project_images2', $request->thumb2);
 
             $data['thumb1'] = $path1;
             $data['thumb2'] = $path2;
@@ -90,9 +90,27 @@ class ProjectController extends Controller
      * @param  int  $id
      *
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+        $slug = Project::generateSlug($request->title);
+        $data['slug'] = $slug;
+
+        if ($request->hasFile('thumb1') || $request->hasFile('thumb2')) {
+
+            if ($project->thumb1 || $project->thumb2) {
+                Storage::delete($project->thumb1 || $project->thumb2);
+            }
+
+            $path1 = Storage::disk('public')->put('project_images1', $request->thumb1);
+            $path2 = Storage::disk('public')->put('project_images2', $request->thumb2);
+
+            $data['thumb1'] = $path1;
+            $data['thumb2'] = $path2;
+        }
+
+        $project->update($data);
+        return redirect()->route('admin.projects.index')->whit('message', "$project->title updated successfully");
     }
 
     /**
