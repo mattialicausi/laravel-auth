@@ -31,7 +31,12 @@ main {
             color: $light-green !important;
             border-bottom: 2px solid $light-green;
             transition: 300ms linear;
+        }
     }
+
+    .my-link {
+        border: 1px solid transparent;
+        font-size: 1.5rem;
     }
 }
 
@@ -215,3 +220,18 @@ main {
         transition: 300ms linear;
      }
 }
+
+// effetcs
+
+.my-active {
+
+    border-bottom: 1px solid $light-green;
+    color: $light-green;
+
+}
+
+// .undeerline-hover :hover{
+//     transform: translate3d(100%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+//     transform-style: preserve-3d;
+//     transition: all 0.3s ease-in-out 0s;
+// }
