@@ -8,7 +8,7 @@
         <div class="container">
             <ul>
                 @foreach ($technology->projects as $project)
-                    <li><a class="link-technologies" href="{{route('admin.projects.show', $project->slug)}}">Name: {{$project->title}}</a></li>
+                    <li><a class="link-technologies" href="{{route('admin.projects.show', $project->slug)}}">- {{$project->title}}</a></li>
                 @endforeach
             </ul>
 
@@ -16,7 +16,7 @@
 
     @else
     <div class="container">
-        <div class="text-my-green fs-1 text-center my-5">No Project in this technology</div>
+        <div class="text-my-white fs-1 my-5">No projects in this technology</div>
     </div>
      <div class="container-emogi-login emoji-index">
         <img src="{{Vite::asset('resources/img/memoji-sconvolto.webp')}}" alt="emoji img">
