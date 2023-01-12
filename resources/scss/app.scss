@@ -200,3 +200,18 @@ main {
 
     }
 }
+
+// show technologies
+
+.link-technologies {
+    text-decoration: none;
+    font-size: 2rem;
+    border-bottom: 1px solid transparent;
+    color: $white;
+
+     &:hover {
+        border-bottom: 1px solid $light-green;
+        color: $light-green;
+        transition: 300ms linear;
+     }
+}
