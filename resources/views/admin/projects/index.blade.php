@@ -39,9 +39,9 @@
         </table>
         @include('partials.admin.modal-delete')
     </div>
-    <div class="container-emogi-login emoji-index">
+    {{-- <div class="container-emogi-login emoji-index">
         <img src="{{Vite::asset('resources/img/memoji-approvo.webp')}}" alt="emoji img">
-    </div>
+    </div> --}}
 @endsection
 
 

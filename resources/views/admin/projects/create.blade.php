@@ -14,7 +14,23 @@
             </div>
             @endif
         </div> --}}
-        <h1 class="text-my-white my-4 fw-bold">Create Project</h1>
+        <div class="d-flex">
+            <h1 class="text-my-white my-4 fw-bold me-3">Create Project</h1>
+
+            <div class="mb-3">
+                <label for="technology_id" class="form-label">Select technology</label>
+                <select name="technology_id" id="technology_id" class="form-control @error('technology_id') is-invalid @enderror">
+                  <option value="">Select technology</option>
+                  @foreach ($technologies as $technology)
+                      <option value="{{$technology->id}}" {{ $technology->id == old('technology_id') ? 'selected' : '' }}>{{$technology->name}}</option>
+                  @endforeach
+                </select>
+                @error('technology_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+        </div>
+
         <div class="row">
             <div class="col-12">
                 <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data" class="p-4">
@@ -67,6 +83,8 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
+
+
 
                       <button type="submit" class="my-btn rounded-pill text-my-dark me-3">Submit</button>
                       <button type="reset" class="my-btn rounded-pill text-my-dark">Reset</button>

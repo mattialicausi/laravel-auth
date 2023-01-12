@@ -7,6 +7,8 @@
 
     @foreach ($technology->projects as $project)
 
+    @if (count($technology->projects) > 0)
+
         <div class="my-container">
 
             <div class="row">
@@ -29,6 +31,11 @@
             </div>
 
         </div>
+
+    @else
+        <div class="text-my-white">There are no projects with this technology</div>
+    @endif
+
 
     @endforeach
 
