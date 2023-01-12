@@ -24,7 +24,7 @@
                     <tr>
                         <th scope="row">{{$technology->id}}</th>
                         <td><a class="my-title-link" href="{{route('admin.technologies.show', $technology->slug)}}" title="View Projects">{{$technology->name}}</a></td>
-                        {{-- <td class="text-my-white">{{count($technologies->projects)}}</td> --}}
+                        <td class="text-my-white">{{count($technology->projects)}}</td>
                         <td><a class="link-secondary" href="{{route('admin.technologies.edit', $technology->slug)}}" title="Edit Project"><i class="fa-solid fa-pen"></i></a></td>
                         <td>
                             <form action="{{route('admin.technologies.destroy', $technology->slug)}}" method="POST">
