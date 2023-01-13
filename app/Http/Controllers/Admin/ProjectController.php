@@ -59,6 +59,7 @@ class ProjectController extends Controller
         }
 
         $new_project = Project::create($data);
+        // dd($request);
         return redirect()->route('admin.projects.show', $new_project->slug);
     }
 

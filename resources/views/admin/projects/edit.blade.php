@@ -17,18 +17,7 @@
         <div class="d-flex">
             <h1 class="text-my-white my-4 fw-bold me-3">Edit Project</h1>
 
-            <div class="mb-3">
-                <label for="technology_id" class="form-label">Select technology</label>
-                <select name="technology_id" id="technology_id" class="form-control @error('technology_id') is-invalid @enderror">
-                  <option value="">Select technology</option>
-                  @foreach ($technologies as $technology)
-                      <option value="{{$technology->id}}" {{ $technology->id == old('technology_id') ? 'selected' : '' }}>{{$technology->name}}</option>
-                  @endforeach
-                </select>
-                @error('technology_id')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+
         </div>
 
         <div class="row">
@@ -36,6 +25,18 @@
                 <form action="{{route('admin.projects.update', $project->slug)}}" method="POST" enctype="multipart/form-data" class="p-4">
                     @csrf
                     @method('PUT')
+                    <div class="mb-3">
+                        <label for="technology_id" class="form-label">Select technology</label>
+                        <select name="technology_id" id="technology_id" class="form-control @error('technology_id') is-invalid @enderror">
+                          <option value="">Select technology</option>
+                          @foreach ($technologies as $technology)
+                              <option value="{{$technology->id}}" {{ $technology->id == old('technology_id') ? 'selected' : '' }}>{{$technology->name}}</option>
+                          @endforeach
+                        </select>
+                        @error('technology_id')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
                       <div class="mb-3">
                         <label for="title" class="form-label text-my-green fw-bold mb-2">Title</label>
