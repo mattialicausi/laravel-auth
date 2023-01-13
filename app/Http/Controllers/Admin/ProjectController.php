@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Technology;
+use App\Models\Device;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -33,7 +34,8 @@ class ProjectController extends Controller
     public function create()
     {
         $technologies = Technology::all();
-        return view('admin.projects.create', compact('technologies'));
+        $devices = Device::all();
+        return view('admin.projects.create', compact('technologies', 'devices'));
     }
 
     /**
@@ -84,7 +86,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $technologies = Technology::all();
-        return view('admin.projects.edit', compact('project', 'technologies'));
+        $devices = Device:all();
+        return view('admin.projects.edit', compact('project', 'technologies', 'devices'));
 
     }
 
@@ -126,6 +129,11 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+
+        if($project->thumb1 || $project->thumb2) {
+            Storage::delete($project->thumb1 || $project->thumb2);
+        }
+
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "$project->title deleted successfully");
     }

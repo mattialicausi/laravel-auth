@@ -12,11 +12,12 @@ class DeviceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
-        //
+        $devices = Device::all();
+        return view('admin.devices.index', compact('devices'));
     }
 
     /**
@@ -24,20 +25,26 @@ class DeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreDeviceRequest  $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(StoreDeviceRequest $request)
     {
-        //
+        $val = $request->validated();
+        $slug = Device::generateSlug($request->name);
+        $val['slug'] = $slug;
+
+        Device::create($val);
+
+        return redirect()->back()->with('message', "Device $slug added successfully")
     }
 
     /**
@@ -46,10 +53,10 @@ class DeviceController extends Controller
      * @param  \App\Models\Device  $device
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
-    {
-        //
-    }
+    // public function show(Device $device)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -57,31 +64,37 @@ class DeviceController extends Controller
      * @param  \App\Models\Device  $device
      * @return \Illuminate\Http\Response
      */
-    public function edit(Device $device)
-    {
-        //
-    }
+    // public function edit(Device $device)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateDeviceRequest  $request
      * @param  \App\Models\Device  $device
-     * @return \Illuminate\Http\Response
+     *
      */
     public function update(UpdateDeviceRequest $request, Device $device)
     {
-        //
+        $val_data = $request->validated();
+        $slug = Device::generateSlug($request->name);
+        $val_data['slug'] = $slug;
+        $device->update($val_data);
+        return redirect()->back()->with('message', "Device $slug updated successfully");
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Device  $device
-     * @return \Illuminate\Http\Response
+     *
      */
     public function destroy(Device $device)
     {
-        //
+        $device->delete();
+
+        return redirect()->back()->with('message', "Device $device->name removed successfully");
     }
 }
