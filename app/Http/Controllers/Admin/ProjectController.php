@@ -86,7 +86,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $technologies = Technology::all();
-        $devices = Device:all();
+        $devices = Device::all();
         return view('admin.projects.edit', compact('project', 'technologies', 'devices'));
 
     }

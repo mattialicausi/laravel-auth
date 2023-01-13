@@ -221,6 +221,21 @@ main {
      }
 }
 
+// index devices
+
+.link-devices {
+    color: $white;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+        color: $light-green;
+        border-bottom: 1px solid $light-green !important;
+        transition: 300ms linear;
+        cursor: pointer;
+    }
+
+}
+
 // effetcs
 
 .my-active {

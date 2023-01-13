@@ -44,7 +44,7 @@ class DeviceController extends Controller
 
         Device::create($val);
 
-        return redirect()->back()->with('message', "Device $slug added successfully")
+        return redirect()->back()->with('message', "Device $slug added successfully");
     }
 
     /**

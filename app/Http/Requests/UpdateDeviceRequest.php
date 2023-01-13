@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
 
 class UpdateDeviceRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class UpdateDeviceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +26,7 @@ class UpdateDeviceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', Rule::unique('devices')->ignore($this->device)],
         ];
     }
 }
