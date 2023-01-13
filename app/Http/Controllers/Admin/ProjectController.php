@@ -22,8 +22,9 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
         $technologies = Technology::all();
+        $devices = Device::all();
 
-        return view('admin.projects.index', compact('projects', 'technologies'));
+        return view('admin.projects.index', compact('projects', 'technologies', 'devices'));
     }
 
     /**
@@ -61,7 +62,10 @@ class ProjectController extends Controller
         }
 
         $new_project = Project::create($data);
-        // dd($request);
+
+        if($request->has('devices')){
+            $new_project->devices()->attach($request->devices);
+        }
         return redirect()->route('admin.projects.show', $new_project->slug);
     }
 
@@ -118,6 +122,11 @@ class ProjectController extends Controller
         }
 
         $project->update($data);
+
+        if($request->has('devices')){
+            $project->devices()->sync($request->devices);
+        }
+
         return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully");
     }
 

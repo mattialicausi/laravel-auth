@@ -8,7 +8,7 @@
             @csrf
             <div class="input-group mb-3">
                 <input type="text" name="name" class="form-control" placeholder="Add device name here " aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add</button>
+                <button class="btn btn-outline-secondary text-my-white" type="submit" id="button-addon2">Add</button>
             </div>
         </form>
 
@@ -43,7 +43,7 @@
                         </td>
 
                         <td class="text-my-white">
-                            {{$device->posts && count($device->posts) > 0 ? count($device->posts) : 0}}
+                            {{$device->projects && count($device->projects) > 0 ? count($device->projects) : 0}}
                         </td>
 
                         <td>

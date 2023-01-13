@@ -87,6 +87,24 @@
                         @enderror
                       </div>
 
+                      <div class="mb-3">
+                        <label for="devices" class="form-label">Devices</label>
+                        <select multiple class="form-select" name="devices[]" id="devices">
+                            <option value="">Select device</option>
+                                @forelse ($devices as $device)
+                                    @if($errors->any())
+                                        <option value="{{$device->id}}" {{in_array($device->id , old('devices[]')) ? 'selected': ''}}>{{$device->name}}</option>
+                                    @else
+                                        <option value="{{$device->id}}" {{$project->devices->contains($device->id) ? 'selected': ''}}>{{$device->name}}</option>
+                                    @endif
+                                @empty
+                                    <option value="">No device attribueted</option>
+                                @endforelse
+
+                        </select>
+
+                      </div>
+
                       <button type="submit" class="my-btn rounded-pill text-my-dark me-3">Submit</button>
                       <button type="reset" class="my-btn rounded-pill text-my-dark">Reset</button>
                 </form>
