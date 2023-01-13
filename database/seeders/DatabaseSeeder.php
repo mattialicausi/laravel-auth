@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             ProjectTableSeeder::class,
-            TechnologySeeder::class
+            TechnologySeeder::class,
+            DeviceSeeder::class
         ]);
     }
 }

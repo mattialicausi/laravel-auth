@@ -26,7 +26,6 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="technology_id" class="form-label">Select technology</label>
                         <select name="technology_id" id="technology_id" class="form-control @error('technology_id') is-invalid @enderror">
                           <option value="">Select technology</option>
                           @foreach ($technologies as $technology)
