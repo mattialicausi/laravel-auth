@@ -32,8 +32,8 @@ class UpdateProjectRequest extends FormRequest
             'thumb2' => ['required', 'image'],
             'technology_used' => ['required'],
             'url' => ['required'],
-            'technology_id' => 'nullable|exists:technologies,id'
-
+            'technology_id' => 'nullable|exists:technologies,id',
+            'devices' => 'nullable|exists:devices,id'
 
         ];
     }

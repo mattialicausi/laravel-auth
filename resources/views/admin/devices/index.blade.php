@@ -25,7 +25,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Projects</th>
+                    <th scope="col"> N. projects</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
@@ -45,6 +45,7 @@
                         <td class="text-my-white">
                             {{$device->projects && count($device->projects) > 0 ? count($device->projects) : 0}}
                         </td>
+
 
                         <td>
                             <form action="{{route('admin.devices.destroy', $device->slug)}}" method="POST">

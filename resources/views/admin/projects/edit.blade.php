@@ -87,7 +87,31 @@
                         @enderror
                       </div>
 
-                      <div class="mb-3">
+                    <div class="mb-3">
+                        @foreach ($devices as $device)
+                            <div class="form-check form-check-inline">
+
+                                @if (old("devices"))
+                                    <input type="checkbox" class="form-check-input" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{in_array( $device->id, old("devices", []) ) ? 'checked' : ''}}>
+                                @else
+                                    <input type="checkbox" class="form-check-input" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{$project->tags->contains($device) ? 'checked' : ''}}>
+                                @endif
+                                    <label class="form-check-label" for="{{$device->slug}}">{{$device->name}}</label>
+                            </div>
+                        @endforeach
+                        @error('devices')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+
+
+
+
+                                {{-- SELECT MULTIPLA PER I DEVICES --}}
+
+                      {{-- <div class="mb-3">
                         <label for="devices" class="form-label">Devices</label>
                         <select multiple class="form-select" name="devices[]" id="devices">
                             <option value="">Select device</option>
@@ -103,7 +127,7 @@
 
                         </select>
 
-                      </div>
+                      </div> --}}
 
                       <button type="submit" class="my-btn rounded-pill text-my-dark me-3">Submit</button>
                       <button type="reset" class="my-btn rounded-pill text-my-dark">Reset</button>

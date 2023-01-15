@@ -1,11 +1,14 @@
 import './bootstrap';
 import '~resources/scss/app.scss';
+
+import { gsap } from "gsap";
+
 import * as bootstrap from 'bootstrap';
 import.meta.glob([
     '../img/**'
 ])
 
-// function for button 'delete' in admin index
+// function for button 'delete' in modal
 const deleteSubmitButtons = document.querySelectorAll('.delete-button');
 
 deleteSubmitButtons.forEach((button) => {
@@ -29,3 +32,13 @@ deleteSubmitButtons.forEach((button) => {
         })
     })
 });
+
+
+// gsap animation nav bar
+
+let tl_1 = gsap.timeline({ ease: "bounce.out" })
+.from(".nav-link", {y: -100, duration: 1, delay: 0.3, opacity: 0, stagger: 0.2})
+.from(".gsap-presentation", {x: -100, duration: 1, delay: 0.3, opacity: 0});
+
+
+

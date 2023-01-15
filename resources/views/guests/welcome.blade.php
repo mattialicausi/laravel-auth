@@ -5,7 +5,7 @@
     <div class="row h-100 d-flex align-items-center h-100">
         <div class="col-6 my-flex h-100">
             <div class="text-uppercase text-my-white my-lineheight">hi there <span>👋</span> i'm</div>
-            <h1 class="text-my-white my-lineheight">Mattia <br> Li Causi</h1>
+            <h1 class="text-my-white my-lineheight gsap-presentation">Mattia <br> Li Causi</h1>
             <h4 class="text-my-green my-lineheight">Full stack junior developer <span>😎</span></h4>
             <p class="text-my-white my-lineheight">I'm a student of the Boolean Academy and I love developing front-end.</p>
             <button class="my-btn rounded-pill"><a href="">See my projects</a></button>

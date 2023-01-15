@@ -124,7 +124,13 @@ class ProjectController extends Controller
         $project->update($data);
 
         if($request->has('devices')){
+
             $project->devices()->sync($request->devices);
+
+        }   else {
+
+            $project->devices()->sync([]);
+
         }
 
         return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully");

@@ -89,7 +89,7 @@
                       <div class="mb-3">
                         <label for="devices" class="form-label">Devices</label>
                         <select multiple class="form-select" name="devices[]" id="devices">
-                            <option value="">Select device</option>
+                            {{-- <option value="">Select device</option> --}}
                                 @forelse ($devices as $device)
                                     <option value="{{$device->id}}">{{$device->name}}</option>
                                 @empty
