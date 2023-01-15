@@ -239,16 +239,21 @@ main {
 //about page
 
 .section-guests-pages {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
 
 .section-pages-2 {
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: $white;
+
+    p, h1 {
+        color: $dark;
+    }
 }
 
 .title-guests {
