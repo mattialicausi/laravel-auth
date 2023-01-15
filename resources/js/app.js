@@ -3,6 +3,7 @@ import '~resources/scss/app.scss';
 
 import { gsap } from "gsap";
 
+
 import * as bootstrap from 'bootstrap';
 import.meta.glob([
     '../img/**'
@@ -34,7 +35,7 @@ deleteSubmitButtons.forEach((button) => {
 });
 
 
-// gsap animation nav bar
+// gsap animation Home guest and navbar
 
 let tl_1 = gsap.timeline({ ease: "bounce.out" });
 

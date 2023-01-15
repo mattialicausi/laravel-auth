@@ -236,6 +236,32 @@ main {
 
 }
 
+//about page
+
+.section-guests-pages {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-pages-2 {
+    flex-direction: column;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+.title-guests {
+    font-size: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+.paragrafh-about {
+    font-size: 1.5rem;
+}
+
 // effetcs
 
 .my-active {
