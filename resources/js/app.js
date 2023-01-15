@@ -36,9 +36,12 @@ deleteSubmitButtons.forEach((button) => {
 
 // gsap animation nav bar
 
-let tl_1 = gsap.timeline({ ease: "bounce.out" })
+let tl_1 = gsap.timeline({ ease: "bounce.out" });
+
+tl_1
 .from(".nav-link", {y: -100, duration: 1, delay: 0.3, opacity: 0, stagger: 0.2})
-.from(".gsap-presentation", {x: -100, duration: 1, delay: 0.3, opacity: 0});
+.from(".gsap-presentation-top", {x: -100, y: -100, duration: 1, delay: 0.3, ease: "bounce.out", opacity: 0})
+.from(".emoji-gsap, .gsap-presentation-down", {scale: 0.7, opacity: 0, duration: 1.5}, "-=1")
 
 
 

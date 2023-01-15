@@ -37,7 +37,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
 
-                    <div class="container-img-logo">
+                    <div class="container-img-logo emoji-gsap">
                         <img class="my-img-logo w-100" src="{{Vite::asset('resources/img/logo-portfolio_adobe_express.svg')}}" alt="image logo">
                     </div>
 
