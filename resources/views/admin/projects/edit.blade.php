@@ -92,11 +92,11 @@
                             <div class="form-check form-check-inline">
 
                                 @if (old("devices"))
-                                    <input type="checkbox" class="form-check-input" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{in_array( $device->id, old("devices", []) ) ? 'checked' : ''}}>
+                                    <input type="checkbox" class="form-check-input text-my-green" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{in_array( $device->id, old("devices", []) ) ? 'checked' : ''}}>
                                 @else
-                                    <input type="checkbox" class="form-check-input" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{$project->tags->contains($device) ? 'checked' : ''}}>
+                                    <input type="checkbox" class="form-check-input text-my-green" id="{{$device->slug}}" name="devices[]" value="{{$device->id}}" {{$project->devices->contains($device) ? 'checked' : ''}}>
                                 @endif
-                                    <label class="form-check-label" for="{{$device->slug}}">{{$device->name}}</label>
+                                    <label class="form-check-label text-my-green" for="{{$device->slug}}">{{$device->name}}</label>
                             </div>
                         @endforeach
                         @error('devices')

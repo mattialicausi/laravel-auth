@@ -29,7 +29,7 @@
                         <td class="text-my-white">{{Str::limit($project->description,100)}}</td>
                         <td class="text-my-white">{{$project->technology ? $project->technology->name : 'Not specified'}}</td>
 
-                        <td class="text-my-white">{{$project->device}}</td>
+                        <td class="text-my-white">{{$project->devices && count($project->devices) > 0 ? count($project->devices) : 0}}</td>
 
                         <td><a class="link-secondary" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-pen"></i></a></td>
                         <td>
