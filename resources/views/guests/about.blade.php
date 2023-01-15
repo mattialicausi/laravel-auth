@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 text-my-white d-flex align-items-center justify-content-center">
-                        <p class="paragrafh-about my-lineheight">Hi, I'm Mattia Li Causi. I attended the boolean full stack web developer academy to learn the basics of this craft. I like to study creating user engaging products, I focus on web product design, also it is tempting for me to find ways to communicate with users visually and coherently. I am proficient in managing multiple design projects in a fast paced environment. Excellent in time management, organization, problem solving and meeting deadlines.</p>
+                        <p class="paragrafh-about my-lineheight">Hi, I'm Mattia Li Causi.<br> I attended the boolean full stack web developer academy to learn the basics of this craft. I like to study creating user engaging products, I focus on web product design, also it is tempting for me to find ways to communicate with users visually and coherently. I am proficient in managing multiple design projects in a fast paced environment. Excellent in time management, organization, problem solving and meeting deadlines.</p>
                     </div>
                 </div>
            </div>

@@ -101,7 +101,11 @@
         </nav>
 
         <main>
-            @yield('content')
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+                    @yield('content')
+                </div>
+            </div>
         </main>
     </div>
 </body>
